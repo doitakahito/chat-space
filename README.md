@@ -3,9 +3,9 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key: true|
-|email|string|null: false, foreign_key: true, add_index : unique: true|
-|password|string|null: false, foreign_key: true|
+|name|string|null: false|
+|email|string|null: false, add_index : unique: true|
+|password|string|null: false|
 
 ### Association
 - has_many :group
@@ -38,7 +38,7 @@
 ## idsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|foreign_key: true
+|user_id|string|foreign_key: true|
 |group_id|string|foreign_key: true|
 
 ### Association
