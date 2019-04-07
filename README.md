@@ -8,6 +8,7 @@
 |password|string|null: false|
 
 ### Association
+- has_many :group_users
 - has_many :groups, through: :group_users
 - has_many :messages
 
@@ -17,6 +18,7 @@
 |name|string|null: false|
 
 ### Association
+- has_many :group_users
 - has_many :users, through: :group_users
 - has_many :messages
 
