@@ -35,7 +35,7 @@
 - belongs_to :group
 - belongs_to :user
 
-## groups-usersテーブル
+## group_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|foreign_key: true|
