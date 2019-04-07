@@ -4,7 +4,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|email|string|null: false, add_index : unique: true|
+|email|string|null: false|
 |password|string|null: false|
 
 ### Association
