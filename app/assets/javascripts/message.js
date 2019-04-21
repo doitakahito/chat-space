@@ -1,10 +1,7 @@
 $(function(){
 
   function buildHTML(message){
-    var image = '';
-    if (message.image) {
-      image = `<img src="${message.image}" class="lower-message__image">`;
-    }
+    var imageHTML = message.image == null ? "" : `<img src="${message.image}" class="lower-message__image">`
 
     var html = `<div class=message>
                     <div class="upper-message">
@@ -19,7 +16,7 @@ $(function(){
                       <p class="lower-message__content">
                       ${message.content}
                       </p>
-                     ${image}
+                     ${imageHTML}
                     </div>
                   </div> `
 
@@ -31,7 +28,6 @@ $(function(){
 
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
-    e.stopPropagation();
     var formData = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
@@ -48,6 +44,7 @@ $(function(){
       $('.messages').append(html);
       $('.form__message').val('');
       $('.hidden').val('');
+      $('.form__submit').prop('disabled', false);
       scroll();
    })
     .fail(function(){
@@ -55,7 +52,3 @@ $(function(){
    })
   })
 });
-
-/*    .always(function(data){
-      $('.submit-btn').prop('disabled', false);
-    })*/
