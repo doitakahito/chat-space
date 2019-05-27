@@ -61,6 +61,7 @@ $(document).on('turbolinks:load', function(){
       dataType: 'json',
       data: {id: last_message_id}
     })
+
     .done(function(messages) {
       var insertHTML = '';
       if (messages.length !== 0) {
@@ -76,7 +77,7 @@ $(document).on('turbolinks:load', function(){
       alert('自動更新に失敗しました');
     })
   }
-  setInterval(reloadMessages, 3000);
+  setInterval(reloadMessages, 10000);
 });
 
 
